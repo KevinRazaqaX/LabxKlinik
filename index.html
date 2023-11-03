@@ -1,50 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+body {
+  height: 100px;
+  margin: 10;
+}
+.navbar {
+    background-color: #DA1B4F;
+    color: white;
+    padding: 0px 0;
+    height: 75px;
+    font-weight:500;
+}
+
+.main-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.main-menu li {
+    margin: 0 20px;
+}
+
+.main-menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #DA1B4F;
+    box-shadow: 0px 8px 16px 0px rgb(255, 255, 255);
+    list-style: none; /* Remove bullet points */
+}
+
+.subfolder:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu li {
+    padding: 10px;
+}
+
+.sub-sub-menu {
+    display: none;
+    background-color: #DA1B4F;
+    list-style: none; /* Remove bullet points */
+}
+
+.sub-subfolder:hover .sub-sub-menu {
+    display: block;
+}
+</style>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initsial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
-  <body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0;">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #DA1B4F;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#" style="font-weight: bold;">Lab & Klinik</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="https://docs.google.com/spreadsheets/d/1VwjuyozonuLvb4jup23XwJsuAjiEOET2tKA6lT_REA0/edit?usp=sharing" style="font-weight: bold;">MCU Automated Format</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://drive.google.com/drive/folders/1_Sjv244cQTVchclboDcANq8I3Fuyo8dl?usp=sharing" style="font-weight: bold;">Google Drive</a>
-              </li>
-              <li class="nav-item dropdown" >
-                <a class="nav-link dropdown-toggle" style="font-weight: bold;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Lab
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                  <li><a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1llgEPe-mQMbNqG-oRDvXr9lxE91Q966wWM2Z5KfRmVg/edit?usp=sharing" style="font-weight: bold;">Link Report Mingguan Lab</a></li>
-                  <li><a class="dropdown-item" href="https://docs.google.com/presentation/d/1O7K7IK1rjdQ2SzD6sMvm3bJo-i4Ny3Qv984JV-HCUu4/edit?usp=sharing" style="font-weight: bold;">Lab Referral Evaluation</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" style="font-weight: bold;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Klinik
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1llgEPe-mQMbNqG-oRDvXr9lxE91Q966wWM2Z5KfRmVg/edit?usp=sharing" style="font-weight: bold;">Link Lab Mingguan Klinik</a></li>
-                  <li><a class="dropdown-item" href="#" style="font-weight: bold;">Link lain 1</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
-    <div style="text-align: center; padding-top: 80px;">
+  <body>
+    <nav class="navbar">
+      <ul class="main-menu">
+          <li><a href="#">Lab & Klinik</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1_Sjv244cQTVchclboDcANq8I3Fuyo8dl?usp=sharing">Google Drive</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VwjuyozonuLvb4jup23XwJsuAjiEOET2tKA6lT_REA0/edit?usp=sharing">MCU Automated Format</a></li>
+          <li class="subfolder">
+              <a href="#">Lab</a>
+              <ul class="sub-menu">
+                  <li><a href="https://docs.google.com/spreadsheets/d/1llgEPe-mQMbNqG-oRDvXr9lxE91Q966wWM2Z5KfRmVg/edit?usp=sharing">Link Report Mingguan Lab</a></li>
+                  <li><a href="https://docs.google.com/presentation/d/1O7K7IK1rjdQ2SzD6sMvm3bJo-i4Ny3Qv984JV-HCUu4/edit?usp=sharing">Lab Referral Evaluation</a></li>
+              </ul>
+          </li>
+
+          <li class="subfolder">
+              <a href="#">Klinik</a>
+              <ul class="sub-menu">
+                  <li><a href="https://docs.google.com/spreadsheets/d/1llgEPe-mQMbNqG-oRDvXr9lxE91Q966wWM2Z5KfRmVg/edit?usp=sharing">Link Report Mingguan Lab</a></li>
+                  <li><a href="#">Next Link</a></li>
+              </ul>
+          </li>
+
+          <li class="subfolder">
+              <a href="#">Lab</a>
+              <ul class="sub-menu">
+                  <li><a href="https://docs.google.com/spreadsheets/d/1llgEPe-mQMbNqG-oRDvXr9lxE91Q966wWM2Z5KfRmVg/edit?usp=sharing">Link Report Mingguan Lab</a></li>
+                  <li><a href="https://docs.google.com/presentation/d/1O7K7IK1rjdQ2SzD6sMvm3bJo-i4Ny3Qv984JV-HCUu4/edit?usp=sharing">Lab Referral Evaluation</a></li>
+              </ul>
+          </li>
+
+          <li class="subfolder">
+              <a href="https://drive.google.com/drive/u/4/folders/0AHGKxCJ2mStDUk9PVA">SOP</a>
+              <ul class="sub-menu">
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1Bx3mSEn_Oi4-SCfMMEGtL3whL9FcmZtR">CPPT, SOP, Informed Consent</a></li>
+                  <li class="sub-subfolder">
+                      <a href="https://drive.google.com/drive/u/4/folders/1XGRimqtm84WEOyiA2xCgwv-i7wniiah">Klinik</a>
+                      <ul class="sub-sub-menu">
+                          <li><a href="https://drive.google.com/drive/u/4/folders/1JsI2oeahIBgoEu0vRYhQvbNHpUNyaAkz">Vaksin&Injeksi</a></li>
+                      </ul>
+                      <a href="https://drive.google.com/drive/u/4/folders/1uklxHfqoGPXL0la0yxfsp-A-0mEbh8p">Lab</a>
+                      <ul class="sub-sub-menu">
+                          <li><a href="https://drive.google.com/drive/u/4/folders/1Asw84a-o7jqPu9N1NR584aPtSr_dWvl_">SOP</a></li>
+                          <li><a href="https://drive.google.com/drive/u/4/folders/1sKPjw1KiOONdvia7_QEOLoiS1Vw_4sSB">Form</a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="subfolder">
+              <a href="https://drive.google.com/drive/u/4/folders/0AEK8THTJdnxYUk9PVA">RS Bunda Sejati</a>
+              <ul class="sub-menu">
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1EwEtQk31iPtqZsxslssy0uxsf-AvTiY0">Finance</a></li>
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1YpqcGkPLgF8waKA7pyRgueYyQzT69L7i">Pemantapan Mutu</a></li>
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1Pr8WQdyNM8bUHM9G84W-54oNFaKQadfy">Supply</a></li>
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1rJOvchbYVpxCm9ct_LGsn8JA_e3FjjSx">SOP PP</a></li>
+                  <li><a href="https://drive.google.com/drive/u/4/folders/14tytsHbgjts3xOdplPvwsz0Qxyq1ylP8">Foto Alat</a></li>
+                  <li><a href="https://drive.google.com/drive/u/4/folders/17PZwcxXhwBBHxme0rlPIwNwk6FKNkwWK">Master Test</a></li>
+                  <li class="sub-subfolder">
+                      <a href="https://drive.google.com/drive/u/4/folders/1lL1sZU0M8dAaqZ0gkTxJsYgX-NjILsGY">Agreement</a>
+                      <ul class="sub-sub-menu">
+                          <li><a href="https://drive.google.com/drive/u/4/folders/1ky9-c39jX65J7zA8k-Tkj-3C5Tl5h9yy">PT BERLIANTAMA DIAGNOSTIKA INDONESIA</a></li>
+                          <li><a href="https://drive.google.com/drive/u/4/folders/1JUcH4sVwSCG7P1ea2QxQvsckMvpDG92H">RS Bunda Sejati</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-subfolder">
+                      <a href="https://drive.google.com/drive/u/4/folders/1z3B3pegI3CrVNV2yAvQ2TQoBCA3aB4mJ">SPO Lab</a>
+                      <ul class="sub-sub-menu">
+                          <li><a href="https://drive.google.com/drive/u/4/folders/1Lu5cRufdHz0n4hnI61iTB3nL8Rgdyjgp">SPO Lab</a></li>
+                          <li><a href="https://drive.google.com/drive/u/4/folders/1Cg3IQMCTKazi2mXXH_9Ws7gLFlVRepE4">SPO Transfusi Darah</a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="subfolder">
+              <a href="https://drive.google.com/drive/u/4/folders/0AN_BeW6Y_BLYUk9PVA">On Site Events</a>
+              <ul class="sub-menu">
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1fAA6oo_QJfmvGguqSyyicX5g1c7vsq3w">Link Report Mingguan Lab</a></li>
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1UUwc3qpBtDAiptGvpaB49nCkc3alMuLE">Reports</a></li>
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1GR-nCPO5d-gmvADNN1xJaOJnPYSYjZMO">Lab Doc(For Client)</a></li>
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1EqBNW7jLyscVN35yG1QeA6-kCEGeeHwb">BAST</a></li>
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1Av5T3tuA3dukHu6fCx4sPgCBOWjES1bT">MCU Project</a></li>
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1s_Zy1k8T4BSC3sUUSrJfLaCZyabRtL6N">Form MCU</a></li>
+              </ul>
+          </li>
+
+
+          <li class="subfolder">
+              <a href="https://drive.google.com/drive/u/4/folders/0ALLn0xBOH0FmUk9PVA">Laboratorium</a>
+              <ul class="sub-menu">
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1g_QuHCQpf6bIOBKW37sVOcDc673pxnWB">PKS Lab</a></li>
+                  <li class="sub-subfolder">
+                      <a href="https://drive.google.com/drive/u/4/folders/1Vt54CLFtCJDPEDTJPFwsjaXqEDwY3pnK">Material Lab</a>
+                      <ul class="sub-sub-menu">
+                          <li><a href="https://docs.google.com/presentation/u/4/d/1ACIXsxLtNsXib8qDAoAJQpDeKJY8lUpI/edit?usp=drive_web&ouid=117755754657145994706&rtpof=true">Plebo</a></li>
+                          <li><a href="https://docs.google.com/presentation/d/10aN5mDBcm_oygH7sp73sn5Zeh4oiFHEm/edit">Sample Handling</a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="subfolder">
+              <a href="https://drive.google.com/drive/u/4/folders/0ABHQuesMT1ItUk9PVA">Klinik & Laboratorium</a>
+              <ul class="sub-menu">
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1rlFxuGSrZRwTX0hIjasQc6Xb6bGNl9l-">Perizinan OSS Klinik Halomedika</a></li>
+                  <li><a href="https://drive.google.com/drive/u/4/folders/1yrCEHf_TczBm_wjVrb2L4TWlawt5UATJ">SIP</a></li>
+                  
+                  <li class="sub-subfolder">
+                      <a href="https://drive.google.com/drive/u/4/folders/1xC7iB893jDiiI4t9Gb3bDiFuhUpt74KM">Training, PKS, Memo, Regulasi</a>
+                      <ul class="sub-sub-menu">
+                          <li><a href="https://drive.google.com/drive/u/4/folders/1QobiDJkG3aGCawuYUhQaGYSdnqxwEm2M">Memo Internal & PKS Dokter HAK</a></li>
+                          <li><a href="https://drive.google.com/drive/u/4/folders/1hDwFVIzD2NV3iQoJ0UDE55Gv4IwautXi">Training</a></li>
+                      </ul>
+                  </li>
+              </ul>
+              <li><a href="https://drive.google.com/drive/u/4/folders/1n4q2QX7G3lBHZAYJkDOrmwaO-4QjrF90">Others</a></li>
+          </li>
+      </ul>
+  </nav>
+    <div style="text-align: center; padding-top: 250px;">
       <h2 id="date-info"></h2>
       <p id="time-info"></p>
       <img src="halodoc logo.png" alt="Your Logo" style="width: 600px; height: auto;">
